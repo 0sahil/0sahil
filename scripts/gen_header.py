@@ -17,19 +17,22 @@ THEMES = {
 }
 
 def rotating(x, y, t):
-    """Each word slides up into place, holds, slides up and out."""
+    """Each word holds, slides up and out, then comes back in from below.
+    Keyframe 0% is the fully visible state and word 0 starts there, so a
+    viewer that never runs the animation still shows "I build backends"."""
     p = 100 / len(WORDS)          # % of cycle per word
     io = 0.35 / CYCLE * 100       # % used for in/out motion
-    css = (f"@keyframes rot{{0%{{opacity:0;transform:translateY(22px)}}"
-           f"{io:.2f}%{{opacity:1;transform:none}}"
+    css = (f"@keyframes rot{{0%{{opacity:1;transform:none}}"
            f"{p-io:.2f}%{{opacity:1;transform:none}}"
            f"{p:.2f}%{{opacity:0;transform:translateY(-22px)}}"
-           f"100%{{opacity:0;transform:translateY(-22px)}}}}"
-           f".w{{opacity:0;animation:rot {CYCLE}s cubic-bezier(.3,.7,.2,1) infinite}}")
+           f"{p+0.01:.2f}%{{opacity:0;transform:translateY(22px)}}"
+           f"{100-io:.2f}%{{opacity:0;transform:translateY(22px)}}"
+           f"100%{{opacity:1;transform:none}}}}"
+           f".w{{opacity:0;animation:rot {CYCLE}s cubic-bezier(.3,.7,.2,1) infinite}}.w0{{opacity:1}}")
     els = []
     for i, w in enumerate(WORDS):
-        last = " wl" if i == len(WORDS) - 1 else ""
-        els.append(f'<text class="big w{last}" x="{x}" y="{y}" style="animation-delay:{i*HOLD - 0.01:.2f}s"><tspan class="ghost">I build </tspan><tspan class="hl">{w}</tspan></text>')
+        delay = 0 if i == 0 else -(CYCLE - i * HOLD)
+        els.append(f'<text class="big w w{i}" x="{x}" y="{y}" style="animation-delay:{delay:.2f}s"><tspan class="ghost">I build </tspan><tspan class="hl">{w}</tspan></text>')
     return css, "\n".join(els)
 
 def build(variant, theme):
@@ -64,10 +67,7 @@ def build(variant, theme):
 .foot{{font:400 15px {SANS};fill:{c['mut']}}}
 {css_rot}
 {extra_css}
-.in{{opacity:0;animation:up .8s cubic-bezier(.2,.7,.2,1) forwards}}
-.d1{{animation-delay:.1s}}.d2{{animation-delay:.25s}}
-@keyframes up{{from{{opacity:0;transform:translateY(6px)}}to{{opacity:1;transform:none}}}}
-@media (prefers-reduced-motion:reduce){{*{{animation:none!important}}.in{{opacity:1}}.w{{opacity:0}}.wl{{opacity:1}}}}
+@media (prefers-reduced-motion:reduce){{*{{animation:none!important}}}}
 </style>
 {bg}
 <text class="small in" x="40" y="92">Hi, I'm Sahil.</text>

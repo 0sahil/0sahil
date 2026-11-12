@@ -5,12 +5,9 @@
 .hl{fill:#0969da}
 .ghost{fill:none}
 .foot{font:400 15px ui-sans-serif,-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif;fill:#59636e}
-@keyframes rot{0%{opacity:0;transform:translateY(22px)}3.37%{opacity:1;transform:none}21.63%{opacity:1;transform:none}25.00%{opacity:0;transform:translateY(-22px)}100%{opacity:0;transform:translateY(-22px)}}.w{opacity:0;animation:rot 10.4s cubic-bezier(.3,.7,.2,1) infinite}
+@keyframes rot{0%{opacity:1;transform:none}21.63%{opacity:1;transform:none}25.00%{opacity:0;transform:translateY(-22px)}25.01%{opacity:0;transform:translateY(22px)}96.63%{opacity:0;transform:translateY(22px)}100%{opacity:1;transform:none}}.w{opacity:0;animation:rot 10.4s cubic-bezier(.3,.7,.2,1) infinite}.w0{opacity:1}
 .b1{animation:d1 14s ease-in-out infinite alternate}.b2{animation:d2 17s ease-in-out infinite alternate}@keyframes d1{to{transform:translate(-160px,40px)}}@keyframes d2{to{transform:translate(150px,-50px)}}
-.in{opacity:0;animation:up .8s cubic-bezier(.2,.7,.2,1) forwards}
-.d1{animation-delay:.1s}.d2{animation-delay:.25s}
-@keyframes up{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
-@media (prefers-reduced-motion:reduce){*{animation:none!important}.in{opacity:1}.w{opacity:0}.wl{opacity:1}}
+@media (prefers-reduced-motion:reduce){*{animation:none!important}}
 </style>
 <defs>
 <radialGradient id="g1"><stop offset="0" stop-color="#0969da" stop-opacity="0.35"/><stop offset="1" stop-color="#0969da" stop-opacity="0"/></radialGradient>
@@ -27,9 +24,9 @@
 <rect x="0.5" y="0.5" width="879" height="239" rx="14" fill="none" stroke="#d0d7de"/>
 <text class="small in" x="40" y="92">Hi, I'm Sahil.</text>
 <text class="big in d1" x="38" y="150">I build </text>
-<text class="big w" x="38" y="150" style="animation-delay:-0.01s"><tspan class="ghost">I build </tspan><tspan class="hl">backends</tspan></text>
-<text class="big w" x="38" y="150" style="animation-delay:2.59s"><tspan class="ghost">I build </tspan><tspan class="hl">frontends</tspan></text>
-<text class="big w" x="38" y="150" style="animation-delay:5.19s"><tspan class="ghost">I build </tspan><tspan class="hl">infrastructure</tspan></text>
-<text class="big w wl" x="38" y="150" style="animation-delay:7.79s"><tspan class="ghost">I build </tspan><tspan class="hl">AI agents</tspan></text>
+<text class="big w w0" x="38" y="150" style="animation-delay:0.00s"><tspan class="ghost">I build </tspan><tspan class="hl">backends</tspan></text>
+<text class="big w w1" x="38" y="150" style="animation-delay:-7.80s"><tspan class="ghost">I build </tspan><tspan class="hl">frontends</tspan></text>
+<text class="big w w2" x="38" y="150" style="animation-delay:-5.20s"><tspan class="ghost">I build </tspan><tspan class="hl">infrastructure</tspan></text>
+<text class="big w w3" x="38" y="150" style="animation-delay:-2.60s"><tspan class="ghost">I build </tspan><tspan class="hl">AI agents</tspan></text>
 <text class="foot in d2" x="40" y="194">Backend at heart · deep on DevOps · building with AI agents</text>
 </svg>
