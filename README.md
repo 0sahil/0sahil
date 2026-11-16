@@ -15,7 +15,7 @@ I'm a backend engineer who's comfortable on the frontend and goes deep on DevOps
 
 <a href="https://github.com/0sahil/wickbar"><img align="right" width="280" src="https://raw.githubusercontent.com/0sahil/wickbar/main/docs/images/popover.png" alt="Wickbar menu bar popover"></a>
 
-**[Wickbar](https://github.com/0sahil/wickbar)** &nbsp;<sub>Swift · macOS · open source</sub>
+<img src="https://raw.githubusercontent.com/0sahil/wickbar/main/docs/images/icon.png" width="22" height="22" align="top" alt=""> **[Wickbar](https://github.com/0sahil/wickbar)** &nbsp;<sub>Swift · macOS · open source</sub>
 
 A menu-bar app for the terminal commands you keep a tab open for: dev servers, tunnels, local APIs. It runs them in a real PTY with live output, starts them at login, restarts them when they crash, and exposes an MCP server so coding agents can manage them too. Signed and notarized. [Download →](https://github.com/0sahil/wickbar/releases/latest)
 
