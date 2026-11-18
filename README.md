@@ -29,7 +29,7 @@ A gym management app for tracking members and pending fees, built offline-first 
 
 #### Recently shipped
 <!-- releases:start -->
-- **[Hermes Kanzo Board v0.1.1](https://github.com/0sahil/hermes-kanzo-board/releases/tag/v0.1.1)** · Python
+- **[Hermes Kanzo Board v0.1.2](https://github.com/0sahil/hermes-kanzo-board/releases/tag/v0.1.2)** · Python
 - **[Wickbar v0.2.0](https://github.com/0sahil/wickbar/releases/tag/v0.2.0)** · Swift
 <!-- releases:end -->
 <sub>Updated daily by a GitHub Action in this repo.</sub>
